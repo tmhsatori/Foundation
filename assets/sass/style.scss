@@ -1,0 +1,130 @@
+//IMPORTS
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+@import '_color-map';
+@import '_color-generator';
+//background: color(sky)
+
+//Variables
+$white: #f2f2f2;
+$black: #222222;
+$blue: #1fd7ec;
+$white: #ffffff;
+
+//Functions
+@function pxtopercent($target, $parent: 16) {
+  @return percentage($target / $parent);
+}
+
+body {
+	background: #111111;
+	font-size: 16px;
+	font-family: $helvetica;
+	color: $white;
+}
+h1,h2,h3,h4,h5,h6 {
+	color: $white;
+}
+h1 {
+	color: $white;
+	text-align: center;
+	-webkit-animation: opacityC 5s; /* Chrome, Safari, Opera */ 
+    animation: opacityC 5s;
+}
+article {
+	margin: 20px 0;
+}
+h2 {
+	color: color(sky);
+}
+@-webkit-keyframes opacityC {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.tmLogo	{
+	$logoSize: pxtopercent(3);
+	@include size($logoSize $logoSize);
+	position: relative;
+	overflow: hidden;
+	margin: 20px auto;
+	.t {
+		.topT {
+			height: pxtopercent(4);
+			width: pxtopercent(12);
+			background: color(sky);;
+			position: absolute;
+			top: 0;
+			left: 0;
+			-webkit-animation: moveOne 3s; /* Chrome, Safari, Opera */ 
+    		animation: moveOne 3s;
+		}
+		.leftT {
+			height: pxtopercent(10);
+			width: pxtopercent(4);
+			background: color(sky);;
+			position: absolute;
+			top: pxtopercent(6);
+			left: 0;
+			-webkit-animation: moveTwo 3s; /* Chrome, Safari, Opera */ 
+    		animation: moveTwo 3s;
+		}
+	}
+	.h {
+		position: absolute;
+		width: pxtopercent(16);
+		height: pxtopercent(16);
+		top: pxtopercent(0);
+		left: pxtopercent(0);
+		overflow: hidden;
+		-webkit-animation: moveThree 3s; /* Chrome, Safari, Opera */ 
+    	animation: moveThree 3s;
+		.leftH {
+			height: pxtopercent(10);
+			width: pxtopercent(4);
+			background: $white;
+			position: absolute;
+			top: pxtopercent(6);
+			left: pxtopercent(6);
+		}
+		.rightH {
+			height: pxtopercent(10);
+			width: pxtopercent(4);
+			background: $white;
+			position: absolute;
+			top: pxtopercent(6);
+			left: pxtopercent(12);
+		}
+		.centerH {
+			height: pxtopercent(4);
+			width: pxtopercent(4);
+			background: $white;
+			position: absolute;
+			top: pxtopercent(8);
+			left: pxtopercent(8);
+		}
+	}
+	
+	@-webkit-keyframes moveOne {
+	    from {width: pxtopercent(0);}
+	    to {width: pxtopercent(12);}
+	}
+	@-webkit-keyframes moveTwo {
+	    from {height: pxtopercent(0);}
+	    to {height: pxtopercent(10);}
+	}
+	@-webkit-keyframes moveThree {
+	    from {left: pxtopercent(20);}
+	    to {left: pxtopercent(0);}
+	}
+	@-webkit-keyframes moveFour {
+	    from {transform:  rotate(0deg);}
+	    to {transform:  rotate(360deg);}
+	   
+	}
+}
+
+#canvas {
+
+}
+
+
